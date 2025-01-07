@@ -29,15 +29,15 @@ btn.addEventListener("click", (e) => {
     }
   });
 
-  const mortgageAmount = parseFloat(inputs[0].value);
-  const mortgageTerm = parseFloat(inputs[1].value);
-  const interestRate = parseFloat(inputs[2].value);
-  if (isNaN(mortgageAmount) || isNaN(mortgageTerm) || isNaN(interestRate)) {
-    alert("Please enter valid values for all fields.");
-    return;
-  }
-
   if (result) {
+    const mortgageAmount = parseFloat(inputs[0].value);
+    const mortgageTerm = parseFloat(inputs[1].value);
+    const interestRate = parseFloat(inputs[2].value);
+    if (isNaN(mortgageAmount) || isNaN(mortgageTerm) || isNaN(interestRate)) {
+      alert("Please enter valid values for all fields.");
+      return;
+    }
+
     complete.style.display = "block";
     const monthlyInterestRate = interestRate / 12 / 100;
     const totalPayments = mortgageTerm * 12;
