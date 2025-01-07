@@ -27,7 +27,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Plus Jakarta Sans';
+  font-family: "Plus Jakarta Sans";
 }
 
 main {
@@ -36,135 +36,134 @@ main {
   display: flex;
   background-color: var(--white);
   border-radius: var(--rad);
-}
 
-.calculator,
-.result {
-  width: 500px;
-  padding: 30px;
-}
+  .calculator,
+  .result {
+    width: 500px;
+    padding: 30px;
+  }
 
-.calculator {
-  border-radius: var(--rad) 0 0 var(--rad);
-}
+  .calculator {
+    border-radius: var(--rad) 0 0 var(--rad);
 
-.result {
-  color: var(--slate-500);
-  border-radius: 0 var(--rad) var(--rad) 80px;
-  background-color: var(--slate-900);
-}
+    h1 {
+      font-size: 24px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
+      span {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--slate-500);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        cursor: pointer;
+      }
+    }
 
-.calculator h1 {
-  font-size: 24px;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    form {
+      --rad: 4px;
 
-.calculator h1 span {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--slate-500);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  cursor: pointer;
-}
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      color: var(--slate-700);
 
-.calculator .calculator-form {
-  --rad: 4px;
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-  color: var(--slate-700);
-}
+      .form-group {
+        .form-group-input {
+          display: flex;
+          align-items: center;
 
-.calculator .calculator-form label {
-  display: block;
-  margin-bottom: 8px;
-}
+          input {
+            display: block;
+            width: 100%;
+            height: 50px;
+            outline: none;
+            border: 1px solid var(--slate-700);
+            border-radius: var(--rad);
+            padding: 16px;
+            color: var(--slate-900);
+            font-size: 20px;
+            order: 1;
+          }
 
-.calculator .calculator-form .form-group-combine {
-  display: flex;
-  column-gap: 16px;
-}
+          .prepend,
+          .suffix {
+            height: 50px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            background-color: var(--slate-100);
+            color: var(--slate-700);
+            font-weight: 700;
+            border: 1px solid var(--slate-700);
+          }
 
-.calculator .calculator-form .form-group .form-group-input {
+          .prepend {
+            order: 0;
+            border-right: 0;
+            border-radius: var(--rad) 0 0 var(--rad);
 
-  display: flex;
-  align-items: center;
-}
+            & ~ input {
+              border-left: 0;
+              border-radius: 0 var(--rad) var(--rad) 0;
+            }
+          }
 
-.calculator .calculator-form .form-group .form-group-input input {
-  display: block;
-  width: 100%;
-  height: 50px;
-  outline: none;
-  border: 1px solid var(--slate-700);
-  border-radius: var(--rad);
-  padding: 16px;
-  color: var(--slate-900);
-  font-size: 20px;
-  order: 1;
-}
+          .suffix {
+            order: 2;
+            border-left: 0;
+            border-radius: 0 var(--rad) var(--rad) 0;
 
-.calculator .calculator-form .form-group .prepend,
-.calculator .calculator-form .form-group .suffix {
-  height: 50px;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  background-color: var(--slate-100);
-  color: var(--slate-700);
-  font-weight: 700;
-  border: 1px solid var(--slate-700);
-}
+            & + input {
+              border-right: 0;
+              border-radius: var(--rad) 0 0 var(--rad);
+            }
+          }
+        }
+      }
 
-.calculator .calculator-form .form-group .prepend {
-  order: 0;
-  border-right: 0;
-  border-radius: var(--rad) 0 0 var(--rad);
-}
+      .form-group-combine {
+        display: flex;
+        column-gap: 16px;
+      }
 
-.calculator .calculator-form .form-group .suffix {
-  order: 2;
-  border-left: 0;
-  border-radius: 0 var(--rad) var(--rad) 0;
-}
+      .form-group.mortgage label {
+        width: 100%;
+        height: 50px;
+        border: 1px solid var(--slate-500);
+        border-radius: var(--rad);
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        font-weight: 700;
 
-/* use ~: maybe both prepend and suffix */
-.calculator .calculator-form .form-group .prepend ~ input {
-  border-left: 0;
-  border-radius: 0 var(--rad) var(--rad) 0;
-}
+        &.seleted {
+          background-color: #fafae0;
+          color: var(--slate-900);
+          border-color: var(--lime);
+        }
 
-.calculator .calculator-form .form-group .suffix + input {
-  border-right: 0;
-  border-radius: var(--rad) 0 0 var(--rad);
-}
+        input {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
 
-.calculator .calculator-form .form-group.mortgage label {
-  width: 100%;
-  height: 50px;
-  border: 1px solid var(--slate-500);
-  border-radius: var(--rad);
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  padding: 16px;
-  font-weight: 700;
-}
-
-.calculator .calculator-form .form-group.mortgage label.seleted {
-  background-color: #FAFAE0;
-  color: var(--slate-900);
-  border-color: var(--lime);
-}
-
-.calculator .calculator-form .form-group.mortgage label input {
-  margin-right: 8px;
+  .result {
+    color: var(--slate-500);
+    border-radius: 0 var(--rad) var(--rad) 80px;
+    background-color: var(--slate-900);
+  }
 }
 
 /* TODO */

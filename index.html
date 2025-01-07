@@ -17,7 +17,7 @@
         Mortgage Calculator
         <span>Clear All</span>
       </h1>
-      <form action="#" class="calculator-form">
+      <form action="#">
         <div class="form-group">
           <label for="mortgage-amount">Mortgage Amount</label>
           <div class="form-group-input">
@@ -30,25 +30,25 @@
             <label for="mortgage-team">Mortgage Term</label>
             <div class="form-group-input">
               <div class="suffix">years</div>
-              <input type="text" id="mortgage-team" class="team-input">
+              <input type="text" id="mortgage-team">
             </div>
           </div>
           <div class="form-group">
             <label for="interest-rate">Interest Rate</label>
             <div class="form-group-input">
               <div class="suffix">%</div>
-              <input type="text" id="interest-rate" class="rate-input">
+              <input type="text" id="interest-rate">
             </div>
           </div>
         </div>
         <div class="form-group mortgage">
           <div>Mortgage Type</div>
-          <label for="repayment" class="seleted">
-            <input type="radio" id="repayment" name="mortgage-type" value="Repayment" checked>
+          <label class="seleted">
+            <input type="radio" name="mortgage-type" value="0" checked>
             Repayment
           </label>
-          <label for="interest">
-            <input type="radio" id="interest" name="mortgage-type" value="Interest Only">
+          <label>
+            <input type="radio" name="mortgage-type" value="1">
             Interest
           </label>
         </div>
