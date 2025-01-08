@@ -58,5 +58,6 @@ clearBtn.addEventListener("click", () => {
     input.value = "";
     input.classList.remove("has-error");
   });
+  empty.style.display = "block"
   complete.style.display = "none";
 });
