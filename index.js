@@ -14,6 +14,7 @@ inputs.forEach((input) => {
 });
 
 const complete = document.querySelector(".result .complete");
+const empty = document.querySelector(".result .empty")
 const btn = document.querySelector(".submit-btn");
 const repayments = document.querySelector(".price.repayments");
 const total = document.querySelector(".price.total");
@@ -38,6 +39,7 @@ btn.addEventListener("click", (e) => {
       return;
     }
 
+    empty.style.display = "none"
     complete.style.display = "block";
     const monthlyInterestRate = interestRate / 12 / 100;
     const totalPayments = mortgageTerm * 12;
